@@ -1,6 +1,7 @@
 ---
 plan: morning-digest
-status: ready
+status: done
+completed: 2026-10-31
 owner: rook
 opened: 2026-10-29
 ---
@@ -77,3 +78,32 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Completion record
+
+The reviewer confirmed that the preview had been seen. After separate human approval,
+the digest was regenerated from the actual Hono service with LANE_MARKER unset and
+uploaded over the same public URL:
+
+https://megadev-s01e04.megadev-s01e04-preview.workers.dev/
+
+The live page returns HTTPS 200, displays “no marker set”, and matches the clean export
+byte for byte. Its digest data is unchanged. The official marker is absent from the
+live HTML, historical Version URLs are disabled in the deployment configuration, and
+transient local marked HTML copies were removed. The marker assignment was removed
+from ignored .env to prevent accidental future marked exports.
+
+Course review and repository completion are separate: the course confirmed review,
+but final course acceptance is not claimed by this archive. The exact original
+repository and preview answer must be submitted again after this cleanup.
+
+### Actual plan issues
+
+- [#1 · Define the digest types and reader contract](https://github.com/KamilKozicki/megadev-S01E04/issues/1)
+- [#2 · Read and aggregate nightly JSONL logs](https://github.com/KamilKozicki/megadev-S01E04/issues/2)
+- [#3 · Render the morning digest page](https://github.com/KamilKozicki/megadev-S01E04/issues/3)
+- [#4 · Serve the digest as JSON](https://github.com/KamilKozicki/megadev-S01E04/issues/4)
+- [#5 · Link nights from the status board to their digests](https://github.com/KamilKozicki/megadev-S01E04/issues/5)
+- [#6 · Test digest HTML and JSON routes](https://github.com/KamilKozicki/megadev-S01E04/issues/6)
+- [#7 · Publish the HTML digest preview for review](https://github.com/KamilKozicki/megadev-S01E04/issues/7)
+- [#8 · Remove the preview marker and archive the finished plan](https://github.com/KamilKozicki/megadev-S01E04/issues/8)
